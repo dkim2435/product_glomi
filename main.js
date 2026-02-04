@@ -1,6 +1,6 @@
-
-const setsContainer = document.querySelector('.sets-container');
+const cardsContainer = document.querySelector('.cards-container');
 const generateBtn = document.getElementById('generate-btn');
+const setCountInput = document.getElementById('set-count');
 const themeToggle = document.getElementById('theme-toggle');
 
 function toggleDarkMode() {
@@ -91,41 +91,56 @@ function openSetInNewWindow(setNumber, numbers) {
     `;
 
     const newWindow = window.open('', `set_${setNumber}`, 'width=600,height=400');
-    newWindow.document.write(html);
-    newWindow.document.close();
-}
-
-function displayAllSets(allSets) {
-    setsContainer.innerHTML = '';
-    allSets.forEach((numbers, index) => {
-        const setCard = document.createElement('div');
-        setCard.classList.add('set-card');
-        setCard.onclick = () => openSetInNewWindow(index + 1, numbers);
-
-        const label = document.createElement('span');
-        label.classList.add('set-label');
-        label.textContent = `${index + 1}`;
-
-        const numbersRow = document.createElement('div');
-        numbersRow.classList.add('numbers-row');
-
-        numbers.forEach(number => {
-            const numberElement = document.createElement('div');
-            numberElement.classList.add('number');
-            numberElement.textContent = number;
-            numbersRow.appendChild(numberElement);
-        });
-
-        setCard.appendChild(label);
-        setCard.appendChild(numbersRow);
-        setsContainer.appendChild(setCard);
-    });
-}
-
-generateBtn.addEventListener('click', () => {
-    const allSets = [];
-    for (let i = 0; i < 10; i++) {
-        allSets.push(generateLottoNumbers());
+    if (newWindow) {
+        newWindow.document.write(html);
+        newWindow.document.close();
     }
-    displayAllSets(allSets);
+}
+
+function createCard(setNumber, numbers) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.onclick = () => openSetInNewWindow(setNumber, numbers);
+
+    const header = document.createElement('div');
+    header.classList.add('card-header');
+    header.textContent = `Set ${setNumber}`;
+
+    const numbersDiv = document.createElement('div');
+    numbersDiv.classList.add('card-numbers');
+
+    numbers.forEach(number => {
+        const numberElement = document.createElement('div');
+        numberElement.classList.add('number');
+        numberElement.textContent = number;
+        numbersDiv.appendChild(numberElement);
+    });
+
+    card.appendChild(header);
+    card.appendChild(numbersDiv);
+    return card;
+}
+
+function generateSets() {
+    const count = parseInt(setCountInput.value) || 5;
+    if (count < 1 || count > 20) {
+        alert('1~20 사이의 숫자를 입력해주세요.');
+        return;
+    }
+
+    cardsContainer.innerHTML = '';
+
+    for (let i = 0; i < count; i++) {
+        const numbers = generateLottoNumbers();
+        const card = createCard(i + 1, numbers);
+        cardsContainer.appendChild(card);
+    }
+}
+
+generateBtn.addEventListener('click', generateSets);
+
+setCountInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        generateSets();
+    }
 });
