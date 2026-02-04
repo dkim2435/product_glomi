@@ -1,20 +1,21 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>오늘 저녁 뭐 먹지? - 한식 메뉴 추천</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     <div class="main-container">
-        <h1>Lotto Number Generator</h1>
+        <h1>🍚 오늘 저녁 뭐 먹지?</h1>
+        <p class="subtitle">한식 메뉴 추천 서비스</p>
         <div class="input-section">
-            <label for="set-count">몇 세트 추첨할까요?</label>
-            <input type="number" id="set-count" min="1" max="20" value="5">
-            <button id="generate-btn">추첨하기</button>
+            <label for="menu-count">몇 개의 메뉴를 추천해드릴까요?</label>
+            <input type="number" id="menu-count" min="1" max="10" value="3">
+            <button id="recommend-btn">추천받기</button>
         </div>
         <div class="cards-container"></div>
     </div>

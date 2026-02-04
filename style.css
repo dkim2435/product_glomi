@@ -1,9 +1,10 @@
 :root {
-    --bg-color: #f0f2f5;
+    --bg-color: #fff8f0;
     --container-bg: white;
     --text-color: #333;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --card-bg: #f8f9fa;
+    --accent-color: #e74c3c;
+    --accent-hover: #c0392b;
 }
 
 body.dark-mode {
@@ -11,7 +12,8 @@ body.dark-mode {
     --container-bg: #16213e;
     --text-color: #eee;
     --shadow-color: rgba(0, 0, 0, 0.3);
-    --card-bg: #1f2b47;
+    --accent-color: #e74c3c;
+    --accent-hover: #c0392b;
 }
 
 * {
@@ -48,15 +50,23 @@ body {
 }
 
 .main-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 20px;
 }
 
 h1 {
     color: var(--text-color);
-    margin-bottom: 20px;
-    font-size: 28px;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.subtitle {
+    color: var(--text-color);
+    opacity: 0.6;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
 
 .input-section {
@@ -64,7 +74,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
@@ -73,7 +83,7 @@ h1 {
     font-size: 16px;
 }
 
-#set-count {
+#menu-count {
     width: 70px;
     padding: 10px;
     font-size: 18px;
@@ -84,19 +94,20 @@ h1 {
     color: var(--text-color);
 }
 
-#generate-btn {
-    padding: 12px 24px;
+#recommend-btn {
+    padding: 12px 28px;
     font-size: 16px;
     border: none;
     border-radius: 8px;
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
-#generate-btn:hover {
-    background-color: #0056b3;
+#recommend-btn:hover {
+    background-color: var(--accent-hover);
 }
 
 .cards-container {
@@ -109,11 +120,11 @@ h1 {
 .card {
     background: var(--container-bg);
     border-radius: 16px;
-    padding: 20px;
+    padding: 25px 30px;
     box-shadow: 0 4px 12px var(--shadow-color);
-    cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-width: 280px;
+    max-width: 320px;
 }
 
 .card:hover {
@@ -121,31 +132,31 @@ h1 {
     box-shadow: 0 8px 20px var(--shadow-color);
 }
 
-.card-header {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--text-color);
-    opacity: 0.7;
+.card-emoji {
+    font-size: 48px;
     margin-bottom: 15px;
 }
 
-.card-numbers {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
+.card-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
-.number {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: bold;
+.card-description {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.card-tag {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 12px;
+    background-color: var(--accent-color);
     color: white;
-    background-color: #4CAF50;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    font-size: 12px;
 }
