@@ -34,7 +34,9 @@ const translations = {
 
 const koreanMenus = [
     {
-        name: '김치찌개', nameEn: 'Kimchi Stew', emoji: '🍲', tag: '찌개', tagEn: 'Stew',
+        name: '김치찌개', nameEn: 'Kimchi Stew',
+        image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=300&fit=crop',
+        tag: '찌개', tagEn: 'Stew',
         description: '돼지고기와 김치가 어우러진 얼큰한 찌개',
         descriptionEn: 'Spicy stew with pork and fermented kimchi',
         ingredients: ['잘 익은 김치 300g', '돼지고기 앞다리살 200g', '두부 1/2모', '대파 1대', '청양고추 2개', '다진 마늘 1큰술'],
@@ -46,7 +48,9 @@ const koreanMenus = [
         likes: 342, dislikes: 12
     },
     {
-        name: '된장찌개', nameEn: 'Soybean Paste Stew', emoji: '🍲', tag: '찌개', tagEn: 'Stew',
+        name: '된장찌개', nameEn: 'Soybean Paste Stew',
+        image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop',
+        tag: '찌개', tagEn: 'Stew',
         description: '구수한 된장과 두부, 채소가 들어간 건강식',
         descriptionEn: 'Healthy stew with savory soybean paste, tofu, and vegetables',
         ingredients: ['된장 2큰술', '두부 1/2모', '감자 1개', '호박 1/3개', '양파 1/2개', '청양고추 1개', '대파 1대'],
@@ -58,7 +62,9 @@ const koreanMenus = [
         likes: 289, dislikes: 8
     },
     {
-        name: '삼겹살', nameEn: 'Grilled Pork Belly', emoji: '🥩', tag: '고기', tagEn: 'Meat',
+        name: '삼겹살', nameEn: 'Grilled Pork Belly',
+        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&h=300&fit=crop',
+        tag: '고기', tagEn: 'Meat',
         description: '두툼한 삼겹살을 구워 쌈에 싸먹는 맛',
         descriptionEn: 'Thick pork belly grilled and wrapped in lettuce',
         ingredients: ['삼겹살 500g', '상추', '깻잎', '쌈장', '마늘', '고추'],
@@ -70,7 +76,9 @@ const koreanMenus = [
         likes: 567, dislikes: 15
     },
     {
-        name: '불고기', nameEn: 'Bulgogi', emoji: '🥩', tag: '고기', tagEn: 'Meat',
+        name: '불고기', nameEn: 'Bulgogi',
+        image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&h=300&fit=crop',
+        tag: '고기', tagEn: 'Meat',
         description: '달콤한 양념에 재운 소고기 구이',
         descriptionEn: 'Grilled beef marinated in sweet soy sauce',
         ingredients: ['소고기 불고기용 400g', '배 1/4개', '간장 4큰술', '설탕 2큰술', '다진 마늘 1큰술', '참기름 1큰술', '양파 1개'],
@@ -82,7 +90,9 @@ const koreanMenus = [
         likes: 423, dislikes: 11
     },
     {
-        name: '제육볶음', nameEn: 'Spicy Pork Stir-fry', emoji: '🍖', tag: '고기', tagEn: 'Meat',
+        name: '제육볶음', nameEn: 'Spicy Pork Stir-fry',
+        image: 'https://images.unsplash.com/photo-1632709810780-b5a4343cebec?w=400&h=300&fit=crop',
+        tag: '고기', tagEn: 'Meat',
         description: '매콤달콤한 양념의 돼지고기 볶음',
         descriptionEn: 'Stir-fried pork in sweet and spicy gochujang sauce',
         ingredients: ['돼지고기 앞다리살 400g', '고추장 2큰술', '고춧가루 1큰술', '간장 2큰술', '설탕 1큰술', '양파 1개', '대파 1대'],
@@ -94,7 +104,9 @@ const koreanMenus = [
         likes: 398, dislikes: 14
     },
     {
-        name: '비빔밥', nameEn: 'Bibimbap', emoji: '🍚', tag: '밥', tagEn: 'Rice',
+        name: '비빔밥', nameEn: 'Bibimbap',
+        image: 'https://images.unsplash.com/photo-1553163147-622ab57be1c7?w=400&h=300&fit=crop',
+        tag: '밥', tagEn: 'Rice',
         description: '각종 나물과 고추장의 조화',
         descriptionEn: 'Mixed rice with various vegetables and gochujang',
         ingredients: ['밥 1공기', '시금치 나물', '콩나물', '당근', '계란 1개', '고추장 2큰술', '참기름 1큰술'],
@@ -106,7 +118,9 @@ const koreanMenus = [
         likes: 445, dislikes: 9
     },
     {
-        name: '떡볶이', nameEn: 'Tteokbokki', emoji: '🍢', tag: '분식', tagEn: 'Snack',
+        name: '떡볶이', nameEn: 'Tteokbokki',
+        image: 'https://images.unsplash.com/photo-1635363638580-c2809d049eee?w=400&h=300&fit=crop',
+        tag: '분식', tagEn: 'Snack',
         description: '매콤달콤한 고추장 양념의 떡 요리',
         descriptionEn: 'Chewy rice cakes in sweet and spicy gochujang sauce',
         ingredients: ['떡볶이떡 300g', '어묵 2장', '고추장 3큰술', '고춧가루 1큰술', '설탕 2큰술', '간장 1큰술', '대파 1대'],
@@ -118,7 +132,9 @@ const koreanMenus = [
         likes: 521, dislikes: 18
     },
     {
-        name: '칼국수', nameEn: 'Kalguksu', emoji: '🍜', tag: '면', tagEn: 'Noodle',
+        name: '칼국수', nameEn: 'Kalguksu',
+        image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop',
+        tag: '면', tagEn: 'Noodle',
         description: '손으로 썬 면과 시원한 국물',
         descriptionEn: 'Hand-cut noodles in refreshing broth',
         ingredients: ['칼국수면 200g', '감자 1개', '호박 1/4개', '양파 1/2개', '멸치 육수 4컵', '다진 마늘 1큰술'],
@@ -130,7 +146,9 @@ const koreanMenus = [
         likes: 312, dislikes: 7
     },
     {
-        name: '삼계탕', nameEn: 'Samgyetang', emoji: '🍗', tag: '탕', tagEn: 'Soup',
+        name: '삼계탕', nameEn: 'Samgyetang',
+        image: 'https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400&h=300&fit=crop',
+        tag: '탕', tagEn: 'Soup',
         description: '인삼과 찹쌀을 넣어 끓인 보양식',
         descriptionEn: 'Nourishing chicken soup with ginseng and glutinous rice',
         ingredients: ['영계 1마리', '찹쌀 1/2컵', '인삼 1뿌리', '대추 3개', '마늘 5쪽', '대파 1대'],
@@ -142,7 +160,9 @@ const koreanMenus = [
         likes: 287, dislikes: 11
     },
     {
-        name: '해물파전', nameEn: 'Seafood Pancake', emoji: '🥞', tag: '전', tagEn: 'Pancake',
+        name: '해물파전', nameEn: 'Seafood Pancake',
+        image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop',
+        tag: '전', tagEn: 'Pancake',
         description: '해물과 파가 듬뿍 들어간 전',
         descriptionEn: 'Crispy pancake loaded with seafood and green onions',
         ingredients: ['부침가루 1컵', '쪽파 한 줌', '오징어 1/2마리', '새우 5마리', '홍합 약간', '계란 1개'],
@@ -154,7 +174,9 @@ const koreanMenus = [
         likes: 378, dislikes: 13
     },
     {
-        name: '감자탕', nameEn: 'Gamjatang', emoji: '🍲', tag: '탕', tagEn: 'Soup',
+        name: '감자탕', nameEn: 'Gamjatang',
+        image: 'https://images.unsplash.com/photo-1583224944127-04b24dcd569c?w=400&h=300&fit=crop',
+        tag: '탕', tagEn: 'Soup',
         description: '돼지 등뼈와 감자를 푹 끓인 탕',
         descriptionEn: 'Hearty soup with pork spine and potatoes',
         ingredients: ['돼지 등뼈 1kg', '감자 3개', '우거지', '들깨가루 3큰술', '된장 1큰술', '고춧가루 2큰술'],
@@ -166,7 +188,9 @@ const koreanMenus = [
         likes: 356, dislikes: 10
     },
     {
-        name: '닭갈비', nameEn: 'Dak-galbi', emoji: '🍗', tag: '고기', tagEn: 'Meat',
+        name: '닭갈비', nameEn: 'Dak-galbi',
+        image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop',
+        tag: '고기', tagEn: 'Meat',
         description: '매콤한 양념의 닭고기와 채소 볶음',
         descriptionEn: 'Spicy stir-fried chicken with vegetables',
         ingredients: ['닭다리살 500g', '고추장 3큰술', '고춧가루 2큰술', '간장 2큰술', '양배추', '고구마', '떡'],
@@ -178,7 +202,9 @@ const koreanMenus = [
         likes: 489, dislikes: 16
     },
     {
-        name: '순두부찌개', nameEn: 'Soft Tofu Stew', emoji: '🍲', tag: '찌개', tagEn: 'Stew',
+        name: '순두부찌개', nameEn: 'Soft Tofu Stew',
+        image: 'https://images.unsplash.com/photo-1607532941433-304659e8198a?w=400&h=300&fit=crop',
+        tag: '찌개', tagEn: 'Stew',
         description: '부드러운 순두부와 해물의 조화',
         descriptionEn: 'Silky soft tofu stew with seafood',
         ingredients: ['순두부 1봉', '바지락 100g', '새우 5마리', '계란 1개', '고춧가루 1큰술', '참기름'],
@@ -190,7 +216,9 @@ const koreanMenus = [
         likes: 334, dislikes: 9
     },
     {
-        name: '잡채', nameEn: 'Japchae', emoji: '🍝', tag: '반찬', tagEn: 'Side',
+        name: '잡채', nameEn: 'Japchae',
+        image: 'https://images.unsplash.com/photo-1648421704448-2f85e5df50cc?w=400&h=300&fit=crop',
+        tag: '반찬', tagEn: 'Side',
         description: '당면과 채소를 볶아낸 명절 음식',
         descriptionEn: 'Stir-fried glass noodles with vegetables',
         ingredients: ['당면 200g', '시금치', '당근', '양파', '표고버섯', '소고기 100g', '간장 3큰술'],
@@ -202,7 +230,9 @@ const koreanMenus = [
         likes: 267, dislikes: 6
     },
     {
-        name: '육개장', nameEn: 'Yukgaejang', emoji: '🍜', tag: '탕', tagEn: 'Soup',
+        name: '육개장', nameEn: 'Yukgaejang',
+        image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop',
+        tag: '탕', tagEn: 'Soup',
         description: '얼큰하고 칼칼한 소고기 국물',
         descriptionEn: 'Spicy beef soup with vegetables',
         ingredients: ['소고기 양지 300g', '대파 2대', '고사리', '숙주', '고춧가루 3큰술', '다진 마늘 2큰술'],
@@ -327,7 +357,7 @@ function displayCardContent(cardEl, menu) {
     const name = cardEl.querySelector('.card-name');
     const desc = cardEl.querySelector('.card-description');
 
-    img.setAttribute('data-emoji', menu.emoji);
+    img.style.backgroundImage = `url('${menu.image}')`;
     tag.textContent = currentLang === 'ko' ? menu.tag : menu.tagEn;
     name.textContent = currentLang === 'ko' ? menu.name : menu.nameEn;
     desc.textContent = currentLang === 'ko' ? menu.description : menu.descriptionEn;
@@ -357,7 +387,7 @@ function displayMenu(index) {
 
 function showRecipe() {
     const menu = koreanMenus[currentIndex % koreanMenus.length];
-    recipeEmoji.textContent = menu.emoji;
+    recipeEmoji.style.backgroundImage = `url('${menu.image}')`;
     recipeTitle.textContent = currentLang === 'ko' ? menu.name : menu.nameEn;
     recipeTag.textContent = currentLang === 'ko' ? menu.tag : menu.tagEn;
 
@@ -407,6 +437,7 @@ function handleSwipe(direction) {
 // Touch events
 menuCard.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
+    currentX = startX; // Initialize currentX to prevent stale value bug
     isDragging = true;
     menuCard.classList.add('swiping');
 });
@@ -438,6 +469,7 @@ menuCard.addEventListener('touchend', () => {
 // Mouse events
 menuCard.addEventListener('mousedown', (e) => {
     startX = e.clientX;
+    currentX = startX; // Initialize currentX to prevent stale value bug
     isDragging = true;
     menuCard.classList.add('swiping');
 });
