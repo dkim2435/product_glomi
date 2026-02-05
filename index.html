@@ -146,6 +146,11 @@
                         <button class="filter-btn" onclick="filterClinics('botox', event)">Botox</button>
                         <button class="filter-btn" onclick="filterClinics('laser', event)">Laser</button>
                         <button class="filter-btn" onclick="filterClinics('filler', event)">Filler</button>
+                        <button class="filter-btn" onclick="filterClinics('lifting', event)">Lifting</button>
+                        <button class="filter-btn" onclick="filterClinics('pico', event)">Pico</button>
+                        <button class="filter-btn" onclick="filterClinics('skinbooster', event)">Skin Booster</button>
+                        <button class="filter-btn" onclick="filterClinics('thread', event)">Thread</button>
+                        <button class="filter-btn" onclick="filterClinics('aquapeel', event)">Aqua Peel</button>
                     </div>
                     <div class="clinics-grid" id="clinics-grid"></div>
                 </div>
@@ -548,7 +553,7 @@ var clinicsData = [
         areaKr: "강남역",
         rating: 4.8,
         reviews: 324,
-        specialties: ["botox", "filler", "laser"],
+        specialties: ["botox", "filler", "laser", "pico", "skinbooster"],
         priceRange: "₩₩",
         popular: "Botox, Rejuran",
         lat: 37.4979,
@@ -562,9 +567,9 @@ var clinicsData = [
         areaKr: "신논현",
         rating: 4.7,
         reviews: 512,
-        specialties: ["filler", "botox", "lifting"],
+        specialties: ["filler", "botox", "lifting", "thread"],
         priceRange: "₩₩₩",
-        popular: "Filler, Ulthera",
+        popular: "Filler, Ulthera, Thread Lift",
         lat: 37.5045,
         lng: 127.0254,
         naverPlaceId: "38453063"
@@ -576,7 +581,7 @@ var clinicsData = [
         areaKr: "강남역",
         rating: 4.6,
         reviews: 187,
-        specialties: ["laser", "skinbooster"],
+        specialties: ["laser", "skinbooster", "pico", "aquapeel"],
         priceRange: "₩₩",
         popular: "Laser Toning, Skin Booster",
         lat: 37.4968,
@@ -590,7 +595,7 @@ var clinicsData = [
         areaKr: "청담",
         rating: 4.9,
         reviews: 203,
-        specialties: ["botox", "filler", "laser"],
+        specialties: ["botox", "filler", "laser", "lifting", "pico"],
         priceRange: "₩₩₩",
         popular: "Premium Botox, Rejuran",
         lat: 37.5200,
@@ -604,9 +609,9 @@ var clinicsData = [
         areaKr: "강남역",
         rating: 4.5,
         reviews: 156,
-        specialties: ["laser", "skinbooster", "botox"],
+        specialties: ["laser", "skinbooster", "botox", "aquapeel"],
         priceRange: "₩",
-        popular: "Affordable Laser",
+        popular: "Affordable Laser, Aqua Peel",
         lat: 37.4982,
         lng: 127.0287,
         naverPlaceId: "1102752374"
@@ -620,7 +625,11 @@ var proceduresData = [
     { english: "Ultherapy", korean: "울쎄라", description: "Non-invasive ultrasound treatment for lifting.", priceKRW: "₩500,000 - ₩2,000,000", priceUSD: "$380 - $1,500", duration: "60-90 min", downtime: "None", lasts: "1-2 years", rank: "#3 Popular", tags: ["Lifting", "Tightening"] },
     { english: "Skin Booster", korean: "물광주사", description: "Micro-injections for glass skin glow.", priceKRW: "₩150,000 - ₩350,000", priceUSD: "$115 - $270", duration: "30-45 min", downtime: "1-3 days", lasts: "4-6 months", rank: "#4 Popular", tags: ["Glass Skin", "Hydration"] },
     { english: "Laser Toning", korean: "레이저토닝", description: "Gentle laser for even skin tone.", priceKRW: "₩50,000 - ₩150,000", priceUSD: "$40 - $115", duration: "15-30 min", downtime: "None", lasts: "Cumulative", rank: "#5 Popular", tags: ["Brightening", "Pores"] },
-    { english: "Dermal Filler", korean: "필러", description: "Injectable gel for volume and contouring.", priceKRW: "₩200,000 - ₩500,000", priceUSD: "$150 - $380", duration: "15-30 min", downtime: "1-3 days", lasts: "6-18 months", rank: "#6 Popular", tags: ["Contouring", "Volume"] }
+    { english: "Dermal Filler", korean: "필러", description: "Injectable gel for volume and contouring.", priceKRW: "₩200,000 - ₩500,000", priceUSD: "$150 - $380", duration: "15-30 min", downtime: "1-3 days", lasts: "6-18 months", rank: "#6 Popular", tags: ["Contouring", "Volume"] },
+    { english: "Shrink (HIFU)", korean: "쉬링크", description: "High-intensity focused ultrasound for skin tightening. A more affordable alternative to Ultherapy.", priceKRW: "₩100,000 - ₩500,000", priceUSD: "$75 - $380", duration: "30-60 min", downtime: "None", lasts: "6-12 months", rank: "#7 Popular", tags: ["Lifting", "Tightening", "Affordable"] },
+    { english: "Pico Laser", korean: "피코레이저", description: "Ultra-short pulse laser for pigmentation, acne scars, and skin rejuvenation.", priceKRW: "₩80,000 - ₩300,000", priceUSD: "$60 - $230", duration: "15-30 min", downtime: "1-3 days", lasts: "Cumulative", rank: "#8 Popular", tags: ["Pigmentation", "Acne Scars", "Brightening"] },
+    { english: "Thread Lift", korean: "실리프팅", description: "Dissolvable threads inserted under skin for natural V-line lifting effect.", priceKRW: "₩300,000 - ₩1,500,000", priceUSD: "$230 - $1,150", duration: "30-60 min", downtime: "3-7 days", lasts: "1-2 years", rank: "#9 Popular", tags: ["V-Line", "Lifting", "Contouring"] },
+    { english: "Aqua Peel", korean: "아쿠아필", description: "Water-based exfoliation for deep pore cleansing and skin hydration. Great entry-level treatment.", priceKRW: "₩50,000 - ₩150,000", priceUSD: "$40 - $115", duration: "30-45 min", downtime: "None", lasts: "2-4 weeks", rank: "#10 Popular", tags: ["Pores", "Hydration", "Beginner-Friendly"] }
 ];
 
 // App State
@@ -780,19 +789,35 @@ function renderProcedures() {
         for (var j = 0; j < p.tags.length; j++) {
             tagsHtml += '<span class="tag">' + p.tags[j] + '</span>';
         }
-        html += '<div class="procedure-card">' +
+        html += '<div class="procedure-card" onclick="toggleProcedure(this)">' +
                 '<div class="procedure-header"><div><div class="procedure-title">' + p.english + '</div>' +
                 '<div class="procedure-title-korean">' + p.korean + '</div></div>' +
-                '<span class="procedure-rank">' + p.rank + '</span></div>' +
+                '<div class="procedure-header-right"><span class="procedure-rank">' + p.rank + '</span>' +
+                '<span class="procedure-chevron">&#9660;</span></div></div>' +
+                '<div class="procedure-tags">' + tagsHtml + '</div>' +
+                '<div class="procedure-body">' +
                 '<p class="procedure-description">' + p.description + '</p>' +
                 '<div class="procedure-details">' +
                 '<div class="detail-item"><div class="detail-label">Price</div><div class="detail-value">' + p.priceKRW + '</div><div class="detail-value-sub">' + p.priceUSD + '</div></div>' +
                 '<div class="detail-item"><div class="detail-label">Duration</div><div class="detail-value">' + p.duration + '</div></div>' +
                 '<div class="detail-item"><div class="detail-label">Downtime</div><div class="detail-value">' + p.downtime + '</div></div>' +
                 '<div class="detail-item"><div class="detail-label">Lasts</div><div class="detail-value">' + p.lasts + '</div></div></div>' +
-                '<div class="procedure-tags">' + tagsHtml + '</div></div>';
+                '</div></div>';
     }
     grid.innerHTML = html;
+}
+
+function toggleProcedure(card) {
+    var isOpen = card.classList.contains('open');
+    // Close all cards first
+    var allCards = document.querySelectorAll('.procedure-card');
+    for (var i = 0; i < allCards.length; i++) {
+        allCards[i].classList.remove('open');
+    }
+    // Toggle clicked card
+    if (!isOpen) {
+        card.classList.add('open');
+    }
 }
 
 function setupTabs() {
