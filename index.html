@@ -128,22 +128,27 @@
                 <h2 class="section-title">K-Beauty Clinics</h2>
                 <p class="section-subtitle">한국 피부과 & 시술 정보</p>
 
-                <!-- Clinic Finder -->
-                <div class="clinic-section">
-                    <h3 class="subsection-title">🏥 Popular Clinics in Gangnam 강남 인기 피부과</h3>
+                <!-- Sub Tab Navigation -->
+                <div class="sub-tab-nav">
+                    <button class="sub-tab-btn active" data-subtab="procedures-info" onclick="switchSubTab('procedures-info', event)">💉 Procedures 시술</button>
+                    <button class="sub-tab-btn" data-subtab="clinic-finder" onclick="switchSubTab('clinic-finder', event)">🏥 Find Clinic 병원찾기</button>
+                </div>
 
+                <!-- Sub Tab: Procedures -->
+                <div id="procedures-info" class="sub-tab-panel">
+                    <div class="procedures-grid" id="procedures-grid"></div>
+                </div>
+
+                <!-- Sub Tab: Clinic Finder -->
+                <div id="clinic-finder" class="sub-tab-panel hidden">
                     <div class="clinic-filter">
                         <button class="filter-btn active" onclick="filterClinics('all', event)">All 전체</button>
                         <button class="filter-btn" onclick="filterClinics('botox', event)">Botox</button>
                         <button class="filter-btn" onclick="filterClinics('laser', event)">Laser</button>
                         <button class="filter-btn" onclick="filterClinics('filler', event)">Filler</button>
                     </div>
-
                     <div class="clinics-grid" id="clinics-grid"></div>
                 </div>
-
-                <h3 class="subsection-title">💉 Popular Procedures 인기 시술</h3>
-                <div class="procedures-grid" id="procedures-grid"></div>
             </section>
 
             <!-- AI Beauty Tab -->
@@ -845,12 +850,25 @@ function renderClinics(filter) {
 }
 
 function filterClinics(filter, e) {
-    var btns = document.querySelectorAll('.filter-btn');
+    var btns = document.querySelectorAll('.clinic-filter .filter-btn');
     btns.forEach(function(btn) { btn.classList.remove('active'); });
     if (e && e.target) {
         e.target.classList.add('active');
     }
     renderClinics(filter);
+}
+
+function switchSubTab(tabId, e) {
+    var btns = document.querySelectorAll('.sub-tab-btn');
+    var panels = document.querySelectorAll('.sub-tab-panel');
+
+    btns.forEach(function(btn) { btn.classList.remove('active'); });
+    panels.forEach(function(panel) { panel.classList.add('hidden'); });
+
+    if (e && e.target) {
+        e.target.classList.add('active');
+    }
+    document.getElementById(tabId).classList.remove('hidden');
 }
 
 document.addEventListener('DOMContentLoaded', function() {

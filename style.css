@@ -577,10 +577,48 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* Clinic Section */
-.clinic-section {
-    margin-bottom: 25px;
+/* Sub Tab Navigation */
+.sub-tab-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 5px;
+    border-radius: 12px;
 }
+
+.sub-tab-btn {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.sub-tab-btn.active {
+    background: white;
+    color: var(--secondary-pink);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-tab-btn:hover:not(.active) {
+    color: var(--primary-pink);
+}
+
+.sub-tab-panel {
+    animation: fadeIn 0.3s ease;
+}
+
+.sub-tab-panel.hidden {
+    display: none;
+}
+
+/* Clinic Section */
 
 .clinic-filter {
     display: flex;
