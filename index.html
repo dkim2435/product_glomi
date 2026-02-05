@@ -80,13 +80,6 @@
                 </div>
             </section>
 
-            <!-- Procedures Tab -->
-            <section id="procedures" class="tab-panel hidden">
-                <h2 class="section-title">Korean Dermatology Procedures</h2>
-                <p class="section-subtitle">한국 피부과 인기 시술</p>
-                <div class="procedures-grid" id="procedures-grid"></div>
-            </section>
-
             <!-- Products Tab -->
             <section id="products" class="tab-panel hidden">
                 <h2 class="section-title">Product Finder</h2>
@@ -132,24 +125,24 @@
 
             <!-- Procedures/Clinics Tab -->
             <section id="procedures" class="tab-panel hidden">
-                <h2 class="section-title">K-Beauty Procedures</h2>
-                <p class="section-subtitle">한국 피부과 인기 시술</p>
+                <h2 class="section-title">K-Beauty Clinics</h2>
+                <p class="section-subtitle">한국 피부과 & 시술 정보</p>
 
-                <!-- Clinic Finder - PLACEHOLDER -->
-                <!--
-                    🔧 개발 명령어: "한국 피부과/성형외과 검색 기능 만들어줘. 지역별, 시술별 필터링 되고,
-                    가격 비교랑 리뷰 볼 수 있게. 강남역 기준으로 주변 병원 리스트 보여줘."
-                    필요: 병원 데이터베이스, 카카오맵 API, 리뷰 시스템
-                -->
-                <div class="feature-card placeholder-card" style="margin-bottom: 20px;">
-                    <div class="feature-icon">🏥</div>
-                    <h3>Clinic Finder & Reviews</h3>
-                    <p class="feature-korean">병원 찾기 & 리뷰</p>
-                    <p class="feature-desc">Find clinics near you, compare prices, and read real reviews from patients.</p>
-                    <div class="coming-badge">Coming Soon</div>
+                <!-- Clinic Finder -->
+                <div class="clinic-section">
+                    <h3 class="subsection-title">🏥 Popular Clinics in Gangnam 강남 인기 피부과</h3>
+
+                    <div class="clinic-filter">
+                        <button class="filter-btn active" onclick="filterClinics('all', event)">All 전체</button>
+                        <button class="filter-btn" onclick="filterClinics('botox', event)">Botox</button>
+                        <button class="filter-btn" onclick="filterClinics('laser', event)">Laser</button>
+                        <button class="filter-btn" onclick="filterClinics('filler', event)">Filler</button>
+                    </div>
+
+                    <div class="clinics-grid" id="clinics-grid"></div>
                 </div>
 
-                <h3 class="subsection-title">Popular Procedures 인기 시술</h3>
+                <h3 class="subsection-title">💉 Popular Procedures 인기 시술</h3>
                 <div class="procedures-grid" id="procedures-grid"></div>
             </section>
 
@@ -220,6 +213,20 @@
                 <h2 class="section-title">Wellness & Lifestyle</h2>
                 <p class="section-subtitle">웰니스 & 라이프스타일</p>
 
+                <!-- Skin-Diet Connection - PLACEHOLDER -->
+                <!--
+                    🔧 개발 명령어: "피부와 식단 연결해서, 피부 고민별로 먹으면 좋은 음식,
+                    피해야 할 음식 알려주는 기능 만들어줘. 여드름엔 이거 피해라 이런 식으로."
+                    필요: 피부-영양 데이터베이스
+                -->
+                <div class="feature-card placeholder-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>Skin-Food Guide</h3>
+                    <p class="feature-korean">피부를 위한 음식</p>
+                    <p class="feature-desc">Learn which foods help or hurt your specific skin concerns.</p>
+                    <div class="coming-badge">Coming Soon</div>
+                </div>
+
                 <!-- Diet Planner - PLACEHOLDER -->
                 <!--
                     🔧 개발 명령어: "다이어트 식단 플래너 만들어줘. 목표 체중, 현재 체중 입력하면
@@ -245,20 +252,6 @@
                     <h3>Workout Routines</h3>
                     <p class="feature-korean">운동 루틴</p>
                     <p class="feature-desc">Home workout routines tailored to your fitness goals - no gym required.</p>
-                    <div class="coming-badge">Coming Soon</div>
-                </div>
-
-                <!-- Skin-Diet Connection - PLACEHOLDER -->
-                <!--
-                    🔧 개발 명령어: "피부와 식단 연결해서, 피부 고민별로 먹으면 좋은 음식,
-                    피해야 할 음식 알려주는 기능 만들어줘. 여드름엔 이거 피해라 이런 식으로."
-                    필요: 피부-영양 데이터베이스
-                -->
-                <div class="feature-card placeholder-card">
-                    <div class="feature-icon">🍎</div>
-                    <h3>Skin-Food Guide</h3>
-                    <p class="feature-korean">피부를 위한 음식</p>
-                    <p class="feature-desc">Learn which foods help or hurt your specific skin concerns.</p>
                     <div class="coming-badge">Coming Soon</div>
                 </div>
 
@@ -541,6 +534,80 @@ var skinTypeResults = {
     }
 };
 
+// Clinics Data
+var clinicsData = [
+    {
+        name: "Oracle Dermatology",
+        korean: "오라클피부과",
+        area: "Gangnam Station",
+        areaKr: "강남역",
+        rating: 4.8,
+        reviews: 324,
+        specialties: ["botox", "filler", "laser"],
+        priceRange: "₩₩",
+        popular: "Botox, Rejuran",
+        lat: 37.4979,
+        lng: 127.0276,
+        naverPlaceId: "1100410036"
+    },
+    {
+        name: "April31 Plastic Surgery",
+        korean: "에이프릴31성형외과",
+        area: "Sinnonhyeon",
+        areaKr: "신논현",
+        rating: 4.7,
+        reviews: 512,
+        specialties: ["filler", "botox", "lifting"],
+        priceRange: "₩₩₩",
+        popular: "Filler, Ulthera",
+        lat: 37.5045,
+        lng: 127.0254,
+        naverPlaceId: "38453063"
+    },
+    {
+        name: "Renewme Skin Clinic",
+        korean: "리뉴미피부과",
+        area: "Gangnam Station",
+        areaKr: "강남역",
+        rating: 4.6,
+        reviews: 187,
+        specialties: ["laser", "skinbooster"],
+        priceRange: "₩₩",
+        popular: "Laser Toning, Skin Booster",
+        lat: 37.4968,
+        lng: 127.0284,
+        naverPlaceId: "1224498562"
+    },
+    {
+        name: "Seran Dermatology",
+        korean: "세란피부과",
+        area: "Cheongdam",
+        areaKr: "청담",
+        rating: 4.9,
+        reviews: 203,
+        specialties: ["botox", "filler", "laser"],
+        priceRange: "₩₩₩",
+        popular: "Premium Botox, Rejuran",
+        lat: 37.5200,
+        lng: 127.0474,
+        naverPlaceId: "1855076137"
+    },
+    {
+        name: "Made Young Clinic",
+        korean: "메이드영의원",
+        area: "Gangnam Station",
+        areaKr: "강남역",
+        rating: 4.5,
+        reviews: 156,
+        specialties: ["laser", "skinbooster", "botox"],
+        priceRange: "₩",
+        popular: "Affordable Laser",
+        lat: 37.4982,
+        lng: 127.0287,
+        naverPlaceId: "1102752374"
+    }
+];
+
 // Procedures Data
 var proceduresData = [
     { english: "Botox", korean: "보톡스", description: "Relaxes facial muscles to reduce wrinkles.", priceKRW: "₩50,000 - ₩200,000", priceUSD: "$40 - $150", duration: "10-15 min", downtime: "None", lasts: "3-6 months", rank: "#1 Popular", tags: ["Anti-wrinkle", "Prevention", "Quick"] },
@@ -738,9 +805,58 @@ function setupTabs() {
     }
 }
 
+function renderClinics(filter) {
+    var grid = document.getElementById('clinics-grid');
+    if (!grid) return;
+
+    var filtered = clinicsData;
+    if (filter && filter !== 'all') {
+        filtered = clinicsData.filter(function(c) {
+            return c.specialties.indexOf(filter) !== -1;
+        });
+    }
+
+    var html = '';
+    for (var i = 0; i < filtered.length; i++) {
+        var c = filtered[i];
+        var stars = '';
+        for (var s = 0; s < 5; s++) {
+            stars += s < Math.floor(c.rating) ? '★' : '☆';
+        }
+
+        var googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.korean + ' ' + c.areaKr);
+        var naverMapUrl = 'https://map.naver.com/p/search/' + encodeURIComponent(c.korean);
+
+        html += '<div class="clinic-card">' +
+                '<div class="clinic-header">' +
+                '<div class="clinic-name">' + c.name + '</div>' +
+                '<div class="clinic-name-kr">' + c.korean + '</div>' +
+                '</div>' +
+                '<div class="clinic-location">📍 ' + c.area + ' ' + c.areaKr + '</div>' +
+                '<div class="clinic-rating"><span class="stars">' + stars + '</span> ' + c.rating + ' <span class="review-count">(' + c.reviews + ' reviews)</span></div>' +
+                '<div class="clinic-popular">✨ ' + c.popular + '</div>' +
+                '<div class="clinic-price">' + c.priceRange + '</div>' +
+                '<div class="clinic-maps">' +
+                '<a href="' + googleMapsUrl + '" target="_blank" class="map-btn google-btn">Google Maps</a>' +
+                '<a href="' + naverMapUrl + '" target="_blank" class="map-btn naver-btn">네이버 지도</a>' +
+                '</div></div>';
+    }
+    grid.innerHTML = html;
+}
+
+function filterClinics(filter, e) {
+    var btns = document.querySelectorAll('.filter-btn');
+    btns.forEach(function(btn) { btn.classList.remove('active'); });
+    if (e && e.target) {
+        e.target.classList.add('active');
+    }
+    renderClinics(filter);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     setupTabs();
     renderProcedures();
+    renderClinics('all');
 });
     </script>
 </body>

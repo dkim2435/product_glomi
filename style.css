@@ -577,6 +577,131 @@ body {
     border-bottom: 1px solid #eee;
 }
 
+/* Clinic Section */
+.clinic-section {
+    margin-bottom: 25px;
+}
+
+.clinic-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.filter-btn:hover:not(.active) {
+    border-color: var(--primary-pink);
+    color: var(--primary-pink);
+}
+
+.clinics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.clinic-card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid #667eea;
+}
+
+.clinic-header {
+    margin-bottom: 8px;
+}
+
+.clinic-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.clinic-name-kr {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.clinic-location {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.clinic-rating {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.clinic-rating .stars {
+    color: #ffc107;
+}
+
+.clinic-rating .review-count {
+    color: #888;
+    font-size: 0.75rem;
+}
+
+.clinic-popular {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+.clinic-price {
+    font-size: 0.85rem;
+    color: #4caf50;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.clinic-maps {
+    display: flex;
+    gap: 8px;
+}
+
+.map-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.map-btn:hover {
+    opacity: 0.85;
+}
+
+.google-btn {
+    background: #4285f4;
+    color: white;
+}
+
+.naver-btn {
+    background: #03c75a;
+    color: white;
+}
+
 /* Scanner Section */
 .coming-soon-card {
     background: white;
