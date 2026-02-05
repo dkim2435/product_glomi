@@ -937,7 +937,7 @@ function renderClinics(filter) {
         var googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.korean + ' ' + c.areaKr);
         var naverMapUrl = 'https://map.naver.com/p/search/' + encodeURIComponent(c.korean);
 
-        var naverReviewUrl = 'https://m.place.naver.com/hospital/' + c.naverPlaceId + '/review';
+        var googleReviewUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(c.korean + ' ' + c.areaKr + ' 리뷰');
         var englishBadge = c.englishOk ? '<span class="english-badge">EN</span>' : '';
 
         html += '<div class="clinic-card">' +
@@ -946,7 +946,7 @@ function renderClinics(filter) {
                 '<div class="clinic-name-kr">' + c.korean + '</div>' +
                 '</div>' +
                 '<div class="clinic-location">📍 ' + c.area + ' ' + c.areaKr + '</div>' +
-                '<div class="clinic-rating"><span class="stars">' + stars + '</span> ' + c.rating + ' <a href="' + naverReviewUrl + '" target="_blank" class="review-link" onclick="event.stopPropagation()">(' + c.reviews + ' reviews)</a></div>' +
+                '<div class="clinic-rating"><span class="stars">' + stars + '</span> ' + c.rating + ' <a href="' + googleReviewUrl + '" target="_blank" class="review-link" onclick="event.stopPropagation()">(' + c.reviews + ' reviews)</a></div>' +
                 '<div class="clinic-popular">✨ ' + c.popular + '</div>' +
                 '<div class="clinic-price">' + c.priceRange + '</div>' +
                 '<div class="clinic-maps">' +
