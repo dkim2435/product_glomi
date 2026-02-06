@@ -1318,7 +1318,7 @@ body {
 }
 
 .content-card.open .content-card-body {
-    max-height: 3000px;
+    max-height: 8000px;
     opacity: 1;
     margin-top: 15px;
 }
@@ -1669,6 +1669,334 @@ body {
 
 .contact-item p {
     margin: 0;
+}
+
+/* Skincare Routine Order Guide */
+.routine-tab-nav {
+    display: flex;
+    gap: 0;
+    background: #f0f0f0;
+    border-radius: 12px;
+    padding: 4px;
+    margin: 16px 0 12px;
+}
+
+.routine-tab-btn {
+    flex: 1;
+    padding: 11px 10px;
+    border: none;
+    background: transparent;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #999;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.routine-tab-btn.active {
+    background: white;
+    color: var(--secondary-pink);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.routine-tab-panel {
+    animation: fadeIn 0.3s ease;
+}
+
+.routine-tab-panel.hidden {
+    display: none;
+}
+
+.routine-tab-desc {
+    color: #555;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.routine-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 15px 0;
+}
+
+.routine-flow-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.routine-flow-step:hover {
+    transform: scale(1.02);
+}
+
+.routine-flow-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+}
+
+.routine-flow-info {
+    flex: 1;
+}
+
+.routine-flow-info strong {
+    font-size: 0.88rem;
+    display: block;
+}
+
+.routine-flow-info .routine-kr {
+    color: #888;
+    font-size: 0.78rem;
+}
+
+.routine-flow-info p {
+    color: #666;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+.routine-flow-time {
+    font-size: 0.7rem;
+    color: white;
+    background: var(--gradient);
+    padding: 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.routine-flow-arrow {
+    display: flex;
+    justify-content: center;
+    padding: 2px 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.routine-water {
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+}
+
+.routine-water strong { color: #1565c0; }
+
+.routine-oil {
+    background: linear-gradient(135deg, #fff3e0, #fce4ec);
+}
+
+.routine-oil strong { color: #e65100; }
+
+.routine-sun {
+    background: linear-gradient(135deg, #fffde7, #fff9c4);
+}
+
+.routine-sun strong { color: #f57f17; }
+
+.texture-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 15px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.texture-bar-bg {
+    background: linear-gradient(90deg, #bbdefb 0%, #e1bee7 50%, #ffcc80 100%);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 15px 0;
+}
+
+.texture-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texture-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.texture-label-left { color: #1565c0; }
+.texture-label-right { color: #e65100; }
+
+.texture-bar-arrow {
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.routine-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin: 18px 0 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.routine-morning {
+    background: linear-gradient(135deg, #fff8e1, #ffecb3);
+    color: #f57f17;
+}
+
+.routine-evening {
+    background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+    color: #283593;
+}
+
+.mistake-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mistake-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 15px;
+    background: #fff3e0;
+    border-radius: 12px;
+    border-left: 3px solid #ff9800;
+}
+
+.mistake-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.mistake-item strong {
+    color: #e65100;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.mistake-item p {
+    color: #555;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.skintype-routine-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skintype-routine-card {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: var(--light-pink);
+}
+
+.skintype-routine-card strong {
+    color: var(--secondary-pink);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.skintype-routine-card p {
+    color: #555;
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.routine-key-principle {
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 12px 0;
+    text-align: center;
+}
+
+.routine-key-principle .principle-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.routine-key-principle .principle-text {
+    color: var(--secondary-pink);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.routine-key-principle .principle-text-kr {
+    color: #888;
+    font-size: 0.82rem;
+    margin-top: 4px;
+}
+
+/* Sub-Accordions (nested inside content cards) */
+.sub-accordion {
+    background: #f9f9fb;
+    border-radius: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.sub-accordion:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.sub-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555;
+}
+
+.sub-accordion-icon {
+    font-size: 1.1rem;
+    color: #aaa;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.sub-accordion.open .sub-accordion-icon {
+    transform: rotate(45deg);
+    color: var(--primary-pink);
+}
+
+.sub-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 16px;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.3s ease;
+}
+
+.sub-accordion.open .sub-accordion-body {
+    max-height: 2000px;
+    opacity: 1;
+    padding: 0 16px 14px;
 }
 
 /* Mobile Optimizations */

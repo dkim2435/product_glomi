@@ -116,6 +116,194 @@
                     </div>
                 </div>
 
+                <!-- Skincare Routine Order Guide -->
+                <div class="content-card" onclick="toggleContent(this)">
+                    <div class="content-card-header"><div><h3>Skincare Layering Guide</h3><p class="content-subtitle">스킨케어 바르는 순서 가이드</p></div><span class="content-chevron">&#9660;</span></div>
+                    <div class="content-card-body" onclick="event.stopPropagation()">
+
+                        <p class="content-text">Not sure what order to apply your skincare? The golden rule is simple: apply from the thinnest, most watery texture to the thickest, most oily texture.</p>
+                        <p class="content-text" style="color:#888; font-size:0.82rem;">스킨케어는 가장 묽은 제형(수분)에서 가장 꾸덕한 제형(유분) 순서로 바르는 것이 기본입니다.</p>
+
+                        <!-- Key Principle Visual -->
+                        <div class="routine-key-principle">
+                            <span class="principle-icon">💧 ➜ 🧴</span>
+                            <div class="principle-text">Thin & Watery → Thick & Oily</div>
+                            <div class="principle-text-kr">묽은 제형 (수분) → 꾸덕한 제형 (유분)</div>
+                        </div>
+
+                        <!-- Texture Gradient Bar -->
+                        <div class="texture-bar-bg">
+                            <div class="texture-bar-labels">
+                                <span class="texture-label texture-label-left">💧 Water<br>수분</span>
+                                <span class="texture-bar-arrow">→ → →</span>
+                                <span class="texture-label texture-label-right">🫧 Oil<br>유분</span>
+                            </div>
+                        </div>
+
+                        <!-- AM / PM Routine Tabs -->
+                        <div class="routine-tab-nav">
+                            <button class="routine-tab-btn active" onclick="switchRoutineTab('am', event)">☀️ Morning 아침</button>
+                            <button class="routine-tab-btn" onclick="switchRoutineTab('pm', event)">🌙 Evening 저녁</button>
+                        </div>
+
+                        <!-- Morning Routine Panel -->
+                        <div id="routine-am" class="routine-tab-panel">
+                            <p class="routine-tab-desc">Hydration + protection in 5 simple steps.<br><span style="color:#888;">수분 충전과 자외선 차단 중심의 5단계.</span></p>
+                            <div class="routine-flow">
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">🫧</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Cleanser</strong> <span class="routine-kr">클렌저</span>
+                                        <p>Gentle water cleanser only. Skip if skin feels dry — just splash lukewarm water.</p>
+                                    </div>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">💦</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Toner</strong> <span class="routine-kr">토너</span>
+                                        <p>Balances pH, preps skin to absorb the next layers better.</p>
+                                    </div>
+                                    <span class="routine-flow-time">10-20s</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">💎</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Serum / Essence</strong> <span class="routine-kr">세럼 / 에센스</span>
+                                        <p>Vitamin C for brightening, niacinamide for pores, hyaluronic acid for hydration.</p>
+                                    </div>
+                                    <span class="routine-flow-time">30-60s</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-oil">
+                                    <span class="routine-flow-icon">🧴</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Moisturizer</strong> <span class="routine-kr">로션 / 크림</span>
+                                        <p>Locks in all layers. Gel for oily skin, cream for dry skin.</p>
+                                    </div>
+                                    <span class="routine-flow-time">1-2min</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-sun">
+                                    <span class="routine-flow-icon">☀️</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Sunscreen SPF 50+</strong> <span class="routine-kr">선크림</span>
+                                        <p>Always the LAST step. Apply generously. Reapply every 2-3 hours outdoors.</p>
+                                    </div>
+                                    <span class="routine-flow-time">LAST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Evening Routine Panel -->
+                        <div id="routine-pm" class="routine-tab-panel hidden">
+                            <p class="routine-tab-desc">Deep cleansing + repair while you sleep.<br><span style="color:#888;">딥 클렌징과 수면 중 피부 재생을 위한 루틴.</span></p>
+                            <div class="routine-flow">
+                                <div class="routine-flow-step routine-oil">
+                                    <span class="routine-flow-icon">🫒</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Oil Cleanser</strong> <span class="routine-kr">오일 클렌저</span>
+                                        <p>Dissolves makeup & sunscreen. Massage on dry face, then emulsify with water.</p>
+                                    </div>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">🫧</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Water Cleanser</strong> <span class="routine-kr">폼 클렌저</span>
+                                        <p>Second cleanse to remove remaining impurities. This is the "double cleanse" method.</p>
+                                    </div>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">💦</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Toner</strong> <span class="routine-kr">토너</span>
+                                        <p>Restore pH after cleansing. Layer 2-3 times for extra hydration (7-skin method).</p>
+                                    </div>
+                                    <span class="routine-flow-time">10-20s</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">💎</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Serum / Ampoule</strong> <span class="routine-kr">세럼 / 앰플</span>
+                                        <p>Best time for actives: retinol, AHA/BHA, or peptides for anti-aging.</p>
+                                    </div>
+                                    <span class="routine-flow-time">30-60s</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-water">
+                                    <span class="routine-flow-icon">👁️</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Eye Cream</strong> <span class="routine-kr">아이크림</span>
+                                        <p>Gently pat around orbital bone with ring finger. Never pull or rub.</p>
+                                    </div>
+                                    <span class="routine-flow-time">30s</span>
+                                </div>
+                                <div class="routine-flow-arrow">▼</div>
+                                <div class="routine-flow-step routine-oil">
+                                    <span class="routine-flow-icon">🧴</span>
+                                    <div class="routine-flow-info">
+                                        <strong>Night Cream</strong> <span class="routine-kr">나이트 크림</span>
+                                        <p>Richer than daytime moisturizer. Seals in everything for overnight repair.</p>
+                                    </div>
+                                    <span class="routine-flow-time">LAST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub-accordions: extra info collapsed by default -->
+                        <div class="sub-accordion" onclick="toggleSubAccordion(this)">
+                            <div class="sub-accordion-header">
+                                <span>⏱ Wait Times Between Steps 단계별 흡수 시간</span>
+                                <span class="sub-accordion-icon">+</span>
+                            </div>
+                            <div class="sub-accordion-body">
+                                <div class="step-list">
+                                    <div class="step-item"><span class="step-num">⏱</span><div class="step-info"><strong>Toner → Serum</strong> <span class="step-kr">토너 → 세럼</span><p>10-20s — until slightly tacky, not fully dry.</p></div></div>
+                                    <div class="step-item"><span class="step-num">⏱</span><div class="step-info"><strong>Serum → Moisturizer</strong> <span class="step-kr">세럼 → 보습제</span><p>30-60s — pat gently to help absorption.</p></div></div>
+                                    <div class="step-item"><span class="step-num">⏱</span><div class="step-info"><strong>Moisturizer → Sunscreen</strong> <span class="step-kr">보습제 → 선크림</span><p>1-2 min — so sunscreen doesn't mix and lose UV protection.</p></div></div>
+                                    <div class="step-item"><span class="step-num">⏱</span><div class="step-info"><strong>Actives (Retinol, AHA/BHA)</strong> <span class="step-kr">활성 성분</span><p>2-3 min — actives need time to penetrate first.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-accordion" onclick="toggleSubAccordion(this)">
+                            <div class="sub-accordion-header">
+                                <span>🧬 Adjust by Skin Type 피부 타입별 포인트</span>
+                                <span class="sub-accordion-icon">+</span>
+                            </div>
+                            <div class="sub-accordion-body">
+                                <div class="skintype-routine-grid">
+                                    <div class="skintype-routine-card"><strong>🏜️ Dry 건성</strong><p>Skip cleanser AM — lukewarm water only. Toner 2-3x. Cream + face oil at night.</p><p style="color:#888;font-size:0.76rem;margin-top:2px;">아침 세안은 미온수만. 토너 2-3회. 크림 + 저녁 오일.</p></div>
+                                    <div class="skintype-routine-card"><strong>💧 Oily 지성</strong><p>Gel/water-based only. Still moisturize — skipping increases oil. BHA serum PM.</p><p style="color:#888;font-size:0.76rem;margin-top:2px;">젤/수분 타입. 보습 필수. 저녁 BHA 세럼.</p></div>
+                                    <div class="skintype-routine-card"><strong>🔄 Combo 복합성</strong><p>Light on T-zone, rich on cheeks. Different moisturizers per zone is fine.</p><p style="color:#888;font-size:0.76rem;margin-top:2px;">T존 가볍게, 볼 리치하게.</p></div>
+                                    <div class="skintype-routine-card"><strong>🌿 Sensitive 민감성</strong><p>3-4 steps max. No fragrance/alcohol. CICA or ceramide. Patch test always.</p><p style="color:#888;font-size:0.76rem;margin-top:2px;">최소 단계. 시카/세라마이드. 패치 테스트 필수.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sub-accordion" onclick="toggleSubAccordion(this)">
+                            <div class="sub-accordion-header">
+                                <span>⚠️ Common Mistakes 흔한 실수</span>
+                                <span class="sub-accordion-icon">+</span>
+                            </div>
+                            <div class="sub-accordion-body">
+                                <div class="mistake-list">
+                                    <div class="mistake-item"><span class="mistake-icon">❌</span><div><strong>Oily before watery 유분 먼저</strong><p>Oil blocks water absorption. Always thin → thick.</p></div></div>
+                                    <div class="mistake-item"><span class="mistake-icon">❌</span><div><strong>Skipping sunscreen 선크림 빼먹기</strong><p>#1 cause of aging & dark spots. Even on cloudy days.</p></div></div>
+                                    <div class="mistake-item"><span class="mistake-icon">❌</span><div><strong>Too many at once 한꺼번에 너무 많이</strong><p>Start with 3-4 products. Build up slowly.</p></div></div>
+                                    <div class="mistake-item"><span class="mistake-icon">❌</span><div><strong>No wait time 흡수 시간 없이</strong><p>Causes pilling and reduced absorption.</p></div></div>
+                                    <div class="mistake-item"><span class="mistake-icon">❌</span><div><strong>Bad combos 상극 성분 혼합</strong><p>Vitamin C + AHA/BHA or retinol + AHA/BHA — alternate AM/PM.</p></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <!-- Key Ingredients Guide -->
                 <div class="content-card" onclick="toggleContent(this)">
                     <div class="content-card-header"><div><h3>Popular K-Beauty Ingredients</h3><p class="content-subtitle">인기 K-뷰티 성분 가이드</p></div><span class="content-chevron">&#9660;</span></div>
@@ -1281,6 +1469,19 @@ function toggleProcedure(card) {
     if (!isOpen) {
         card.classList.add('open');
     }
+}
+
+function toggleSubAccordion(el) {
+    event.stopPropagation();
+    el.classList.toggle('open');
+}
+
+function switchRoutineTab(tab, e) {
+    var btns = document.querySelectorAll('.routine-tab-btn');
+    btns.forEach(function(btn) { btn.classList.remove('active'); });
+    if (e && e.target) { e.target.classList.add('active'); }
+    document.getElementById('routine-am').classList.toggle('hidden', tab !== 'am');
+    document.getElementById('routine-pm').classList.toggle('hidden', tab !== 'pm');
 }
 
 function toggleContent(card) {
