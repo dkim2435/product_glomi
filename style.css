@@ -1190,6 +1190,209 @@ body {
     margin-bottom: 25px;
 }
 
+/* PC Camera UI (mirrors fs- pattern) */
+.pc-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pc-camera-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.pc-camera-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #1a1a2e;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.pc-camera-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.pc-camera-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pc-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pc-controls.hidden {
+    display: none;
+}
+
+/* Draping Comparison UI */
+.draping-card {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.draping-header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.draping-round-label {
+    font-weight: 700;
+    color: var(--secondary-pink);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.draping-header .progress-bar {
+    margin-bottom: 12px;
+}
+
+.draping-instruction {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.draping-instruction .korean {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.draping-comparison {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.draping-option {
+    flex: 1;
+    max-width: 200px;
+    background: none;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.draping-option:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-pink);
+    box-shadow: 0 4px 15px rgba(196, 69, 105, 0.25);
+}
+
+.draping-option:active {
+    transform: scale(0.97);
+}
+
+.draping-option.draping-picked {
+    animation: drapingPick 0.4s ease-out;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.4);
+}
+
+@keyframes drapingPick {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+.draping-bg {
+    aspect-ratio: 3 / 4;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.draping-face {
+    width: 65%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    border: 3px solid rgba(255,255,255,0.7);
+}
+
+.draping-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.draping-vs {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--secondary-pink);
+    flex-shrink: 0;
+}
+
+.draping-label {
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.draping-label .korean {
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: #888;
+}
+
+/* Analyzing Screen */
+.pc-analyzing-card {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 25px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+.pc-analyzing-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #eee;
+    border-top-color: var(--primary-pink);
+    border-radius: 50%;
+    animation: fsSpin 0.8s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.pc-analyzing-card h3 {
+    color: var(--secondary-pink);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.pc-analyzing-card .korean {
+    color: #888;
+    font-size: 0.9rem;
+}
+
 .color-palette {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2441,5 +2644,29 @@ body {
 
     .fs-camera-card {
         padding: 15px;
+    }
+
+    .pc-camera-card {
+        padding: 15px;
+    }
+
+    .draping-card {
+        padding: 15px;
+    }
+
+    .draping-option {
+        max-width: 160px;
+    }
+
+    .draping-vs {
+        font-size: 0.9rem;
+    }
+
+    .draping-face {
+        width: 70%;
+    }
+
+    .pc-analyzing-card {
+        padding: 40px 20px;
     }
 }
